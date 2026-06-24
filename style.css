@@ -1,0 +1,482 @@
+/* الألوان والجماليات - ثيم غامق فاخر ممزوج بالرمادي والميتاليك والفسفوري */
+:root {
+    --dark-primary: #0f1115;
+    --dark-secondary: #181b22;
+    --gray-border: #2d323f;
+    --gray-light: #f1f3f5;
+    --text-pure-white: #ffffff;
+    --text-silver: #a0aec0;
+    --text-dark: #1a202c;
+    
+    /* الألوان التفاعلية المميزة */
+    --cyan-neon: #00e5ff;
+    --blue-electric: #0070f3;
+    --gold-accent: #d69e2e;
+    --error-red: #ff3b30;
+    --success-green: #00e676;
+    
+    --border-radius-main: 14px;
+    --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.25), 0 1px 8px rgba(0, 0, 0, 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: var(--text-silver);
+    line-height: 1.8;
+    padding-bottom: 50px;
+}
+
+/* الهيدر الأكاديمي الفخم بتأثير زجاجي متوهج */
+.university-header {
+    position: relative;
+    background: linear-gradient(145deg, #0f1115 0%, #1c1f26 100%);
+    color: var(--text-pure-white);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--gray-border);
+    overflow: hidden;
+    box-shadow: var(--shadow-luxury);
+}
+
+.header-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.university-header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, var(--text-pure-white), var(--cyan-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+}
+
+.university-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-silver);
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* بطاقة عرض معلومات الطالب والمشرف */
+.academic-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--gray-border);
+    padding: 15px 35px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.info-box .label {
+    font-size: 0.85rem;
+    color: var(--text-silver);
+    font-weight: 400;
+}
+
+.info-box .value {
+    font-size: 1.3rem;
+    color: var(--cyan-neon);
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.info-divider {
+    width: 2px;
+    height: 35px;
+    background: var(--gray-border);
+}
+
+/* بطاقات التصميم العام والمربعات الحاوية */
+.container {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 25px;
+}
+
+.card {
+    background: var(--dark-secondary);
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid var(--gray-border);
+    box-shadow: var(--shadow-luxury);
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    border-color: rgba(0, 229, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.05);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: var(--text-pure-white);
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 12px;
+    font-weight: 700;
+}
+
+.matrix-title {
+    color: var(--text-silver) !important;
+    font-size: 1.3rem !important;
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .grid-2-cols { grid-template-columns: 1fr; }
+    .academic-info { flex-direction: column; border-radius: 20px; gap: 10px; padding: 20px; }
+    .info-divider { display: none; }
+}
+
+/* أزرار التحكم وحقول الإدخال للأبعاد */
+.control-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.control-group {
+    background: rgba(255,255,255,0.01);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dashed var(--gray-border);
+}
+
+.control-group h3 {
+    font-size: 1.1rem;
+    color: var(--cyan-neon);
+    margin-bottom: 15px;
+}
+
+.inputs-row {
+    display: flex;
+    gap: 20px;
+}
+
+.inputs-row label {
+    font-weight: 600;
+    color: var(--text-silver);
+}
+
+input[type="number"] {
+    background-color: #0f1115;
+    color: var(--text-pure-white);
+    border: 2px solid var(--gray-border);
+    border-radius: 8px;
+    padding: 8px;
+    width: 75px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--cyan-neon);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.scalar-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.1rem;
+    color: var(--text-pure-white);
+}
+
+/* 🔲 التصميم الاحترافي والفاخر للمصفوفة الرياضية والأقواس */
+.matrix-bracket-wrapper {
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+    margin: 20px auto;
+}
+
+/* رسم الأقواس الجانبية السميكة بلون ميتاليك فضي وتوهج أزرق ناعم */
+.matrix-bracket-wrapper::before,
+.matrix-bracket-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    border: 4px solid #cbd5e1;
+    transition: var(--transition-smooth);
+}
+
+.matrix-bracket-wrapper::before {
+    left: 0;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+}
+
+.matrix-bracket-wrapper::after {
+    right: 0;
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+}
+
+/* عند التركيز على المصفوفة تتوهج الأقواس */
+.matrix-bracket-wrapper:focus-within::before,
+.matrix-bracket-wrapper:focus-within::after {
+    border-color: var(--cyan-neon);
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4));
+}
+
+.matrix-grid-container {
+    display: grid;
+    gap: 12px;
+    padding: 5px;
+}
+
+/* تصميم المربعات النظامية لإدخال الأرقام في المصفوفة */
+.matrix-input {
+    width: 60px;
+    height: 60px;
+    background-color: #0f1115;
+    color: var(--text-pure-white);
+    border: 2px solid var(--gray-border);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+}
+
+.matrix-input:focus {
+    background-color: #181b22;
+    border-color: var(--cyan-neon);
+    color: var(--cyan-neon);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15);
+}
+
+/* تصميم لوحة الأزرار والعمليات وتدرج الألوان المتناسقة */
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--blue-electric), #0051ba);
+    color: white;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 112, 243, 0.4);
+}
+
+.btn-danger {
+    background: #240c10;
+    color: var(--error-red);
+    border: 1px solid var(--error-red);
+}
+.btn-danger:hover {
+    background: var(--error-red);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 59, 48, 0.3);
+}
+
+.btn-success { background-color: var(--success-green); color: #000; }
+.btn-secondary { background-color: #2d323f; color: white; }
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* أزرار العمليات المشتركة باللون الأسود/الرمادي والحدود الميتاليك وتتوهج بالأزرق */
+.btn-action {
+    background-color: #12141a;
+    color: var(--text-pure-white);
+    border: 1px solid var(--gray-border);
+}
+.btn-action:hover {
+    background-color: #1c1f26;
+    border-color: var(--blue-electric);
+    color: var(--cyan-neon);
+    transform: translateY(-2px);
+}
+
+/* زر ضرب المصفوفات المميز */
+.btn-highlight {
+    border-color: var(--gold-accent) !important;
+    color: var(--gold-accent) !important;
+}
+.btn-highlight:hover {
+    background: var(--gold-accent) !important;
+    color: black !important;
+}
+
+/* أزرار العمليات الفردية تتوهج بالرمادي اللامع أو الأبيض عند التمرير */
+.btn-action-single {
+    background-color: #1c1f26;
+    color: var(--text-silver);
+    border: 1px solid var(--gray-border);
+}
+.btn-action-single:hover {
+    background-color: var(--text-pure-white);
+    color: black;
+    transform: translateY(-2px);
+}
+
+.ops-group {
+    margin-bottom: 25px;
+    background: rgba(255,255,255,0.01);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.ops-group h3 {
+    font-size: 1.1rem;
+    color: var(--text-silver);
+    font-weight: 600;
+}
+
+/* لوحة النتائج الأنيقة وعرض خطوات التفكيك */
+.hidden { display: none !important; }
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 15px;
+}
+
+.error-box {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: var(--error-red);
+    padding: 15px;
+    border-radius: 8px;
+    border-right: 5px solid var(--error-red);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.formula-box {
+    background: #0f1115;
+    color: var(--cyan-neon);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 700;
+    border: 1px solid var(--gray-border);
+    letter-spacing: 1px;
+}
+
+/* مظهر المخرجات للمصفوفة الناتجة */
+.output-wrapper::before, .output-wrapper::after {
+    border-color: var(--success-green);
+}
+
+.result-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.result-table td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 1px solid rgba(0, 230, 118, 0.2);
+    color: var(--success-green);
+    background: #0f1115;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+/* لوحة خطوات الحل - كود برمجي كلاسيكي منظم ومريح جداً */
+.steps-box {
+    background: #0f1115;
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.steps-box h3 {
+    font-size: 1.2rem;
+    color: var(--text-pure-white);
+    margin-bottom: 20px;
+}
+
+.step-item {
+    background: #181b22;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-right: 4px solid var(--cyan-neon);
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+/* التذييل البسيط والسفلي */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: rgba(255,255,255,0.2);
+    font-size: 0.85rem;
+    margin-top: 50px;
+    border-top: 1px solid var(--gray-border);
+}
+
+/* حركات تحسين الأداء الرسومي */
+.animate-fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}

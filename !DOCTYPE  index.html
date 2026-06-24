@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة المصفوفات الاحترافية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="university-header">
+        <div class="header-glow"></div>
+        <div class="header-content">
+            <h1>منصة حاسبة المصفوفات التعليمية الرقمية</h1>
+            <p class="subtitle">نظام تفاعلي متطور لتحليل العمليات الجبرية وعرض خطوات الحل بالتفصيل</p>
+            <div class="academic-info">
+                <div class="info-box">
+                    <span class="label">تقدمة الطالب</span>
+                    <span class="value">محمد عساف</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-box">
+                    <span class="label">بإشراف الدكتور</span>
+                    <span class="value">بسام العثمان</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dimensions-control card animate-fade-in">
+            <h2><span class="icon">📐</span> تحديد أبعاد ومقاسات المصفوفات</h2>
+            <div class="control-grid">
+                <div class="control-group">
+                    <h3>المصفوفة الأولى (A)</h3>
+                    <div class="inputs-row">
+                        <label>الأسطر: <input type="number" id="rowsA" min="1" max="5" value="2"></label>
+                        <label>الأعمدة: <input type="number" id="colsA" min="1" max="5" value="2"></label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h3>المصفوفة الثانية (B)</h3>
+                    <div class="inputs-row">
+                        <label>الأسطر: <input type="number" id="rowsB" min="1" max="5" value="2"></label>
+                        <label>الأعمدة: <input type="number" id="colsB" min="1" max="5" value="2"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <button id="btn-generate" class="btn btn-primary">توليد وإعادة الهيكلة ⚙️</button>
+            </div>
+        </section>
+
+        <section class="matrices-input-section grid-2-cols">
+            <div class="card animate-fade-in text-center">
+                <h2 class="matrix-title">المصفوفة الفاخرة A</h2>
+                <div class="matrix-bracket-wrapper">
+                    <div id="container-A" class="matrix-grid-container"></div>
+                </div>
+            </div>
+            <div class="card animate-fade-in text-center">
+                <h2 class="matrix-title">المصفوفة الفاخرة B</h2>
+                <div class="matrix-bracket-wrapper">
+                    <div id="container-B" class="matrix-grid-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scalar-section card animate-fade-in">
+            <label for="scalar-value">⚡ معامل الضرب بالعدد الثابت (Scalar Coefficient $k$):</label>
+            <input type="number" id="scalar-value" value="2" step="any">
+        </section>
+
+        <section class="operations-panel card animate-fade-in">
+            <h2><span class="icon">🕹️</span> مركز التحكم بالعمليات الرياضية</h2>
+            
+            <div class="ops-group">
+                <h3>العمليات المشتركة والتركيبية</h3>
+                <div class="buttons-grid">
+                    <button onclick="matrixOps.add()" class="btn btn-action">الجمع المنظم (A + B)</button>
+                    <button onclick="matrixOps.subtract()" class="btn btn-action">الطرح المنظم (A - B)</button>
+                    <button onclick="matrixOps.multiply()" class="btn btn-action btn-highlight">ضرب المصفوفات التبادلي (A × B)</button>
+                </div>
+            </div>
+
+            <div class="ops-group">
+                <h3>التحليلات المنفردة للمصفوفة (A)</h3>
+                <div class="buttons-grid">
+                    <button onclick="matrixOps.scalar('A')" class="btn btn-action-single">مضاعفة المصفوفة (k × A)</button>
+                    <button onclick="matrixOps.transpose('A')" class="btn btn-action-single">إيجاد المنقول (Aᵀ)</button>
+                    <button onclick="matrixOps.determinant('A')" class="btn btn-action-single">حساب المحدد |A|</button>
+                    <button onclick="matrixOps.inverse('A')" class="btn btn-action-single">مصفوفة المعكوس (A⁻¹)</button>
+                </div>
+            </div>
+
+            <div class="ops-group">
+                <h3>التحليلات المنفردة للمصفوفة (B)</h3>
+                <div class="buttons-grid">
+                    <button onclick="matrixOps.scalar('B')" class="btn btn-action-single">مضاعفة المصفوفة (k × B)</button>
+                    <button onclick="matrixOps.transpose('B')" class="btn btn-action-single">إيجاد المنقول (Bᵀ)</button>
+                    <button onclick="matrixOps.determinant('B')" class="btn btn-action-single">حساب المحدد |B|</button>
+                    <button onclick="matrixOps.inverse('B')" class="btn btn-action-single">مصفوفة المعكوس (B⁻¹)</button>
+                </div>
+            </div>
+
+            <div class="center-btn text-center">
+                <button id="btn-reset" class="btn btn-danger">تطهير وإعادة تعيين البيانات الحالية 🔄</button>
+            </div>
+        </section>
+
+        <section id="result-section" class="result-panel card hidden animate-fade-in">
+            <div class="result-header">
+                <h2><span class="icon">📈</span> لوحة المخرجات الرياضية وتفاصيل الحل</h2>
+                <div class="export-buttons">
+                    <button onclick="exportResult('copy')" class="btn btn-small btn-secondary">نسخ مخرجات التقرير 📋</button>
+                    <button onclick="exportResult('download')" class="btn btn-small btn-success">تصدير كملف أكاديمي مستند 💾</button>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-box hidden"></div>
+            
+            <div id="success-box">
+                <div class="formula-box" id="math-formula"></div>
+                
+                <div class="result-visual-container">
+                    <h3>المصفوفة الناتجة النهائية:</h3>
+                    <div class="matrix-bracket-wrapper output-wrapper">
+                        <div id="result-matrix-output"></div>
+                    </div>
+                </div>
+
+                <div class="steps-box">
+                    <h3>📖 التسلسل والمبرهنات الرياضية المتبعة في الحل:</h3>
+                    <div id="steps-output"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>مشروع تخرج مصغر في الجبر الخطي والبرمجيات التفاعلية © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
